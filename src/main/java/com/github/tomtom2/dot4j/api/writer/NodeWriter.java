@@ -1,5 +1,6 @@
 package com.github.tomtom2.dot4j.api.writer;
 
+import com.github.tomtom2.dot4j.api.Link;
 import com.github.tomtom2.dot4j.api.Node;
 
 class NodeWriter {
@@ -11,8 +12,10 @@ class NodeWriter {
 	}
 	
 	public String getNodeEdgesAsString(Node node){
-		String str = node.getName();
-		str += getNodeOptions(node);
+		String str = "";
+		for(Link link : node.getNeighbours()){
+			str += node.getName() + " -> " + link.getNode() + "\n";
+		}
 		return str;
 	}
 

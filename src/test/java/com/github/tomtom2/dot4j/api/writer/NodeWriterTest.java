@@ -1,6 +1,6 @@
 package com.github.tomtom2.dot4j.api.writer;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -18,9 +18,11 @@ public class NodeWriterTest {
 		node.getNeighbours().add(lnk);
 		
 		//act
-		String str = "";
+		NodeWriter writer = new NodeWriter();
+		String str = writer.getNodeAsString(node);
 		
 		//assert
-		fail();
+		System.out.println(str);
+		assertTrue(str.equals("node"));
 	}
 }

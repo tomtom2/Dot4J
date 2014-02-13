@@ -1,7 +1,5 @@
 package com.github.tomtom2.dot4j.api;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
 public class LinkTest {
@@ -16,7 +14,7 @@ public class LinkTest {
 	@Test(expected=Exception.class)
 	public void buildException() throws Exception {
 		// prepare
-		Node node = new Node.Builder("myNode").build();
+		Node node = new Node.Builder("").build();
 		new Link.Builder(node).build();
 	}
 
