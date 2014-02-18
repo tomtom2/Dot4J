@@ -14,7 +14,7 @@ class NodeWriter {
 	public String getNodeEdgesAsString(Node node){
 		String str = "";
 		for(Link link : node.getNeighbours()){
-			str += node.getName() + " -> " + link.getNode() + "\n";
+			str += node.getName() + " -> " + link.getNode().getName() + "\n";
 		}
 		return str;
 	}

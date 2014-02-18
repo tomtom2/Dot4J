@@ -10,6 +10,19 @@ import com.github.tomtom2.dot4j.api.Node;
 public class NodeWriterTest {
 
 	@Test
+	public void getNodeAsString() throws Exception{
+		//prepare
+		Node node = new Node.Builder("node").build();
+		
+		//act
+		NodeWriter writer = new NodeWriter();
+		String str = writer.getNodeAsString(node);
+		
+		//assert
+		assertTrue(str.equals("node"));
+	}
+	
+	@Test
 	public void getNodeEdgesAsString() throws Exception{
 		//prepare
 		Node node = new Node.Builder("node").build();
@@ -19,10 +32,10 @@ public class NodeWriterTest {
 		
 		//act
 		NodeWriter writer = new NodeWriter();
-		String str = writer.getNodeAsString(node);
+		String str = writer.getNodeEdgesAsString(node);
 		
 		//assert
 		System.out.println(str);
-		assertTrue(str.equals("node"));
+		assertTrue(str.equals("node -> node2\n"));
 	}
 }
